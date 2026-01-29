@@ -1,19 +1,33 @@
-// @ts-check
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+// Define your 34+ cases here
+const testData = [
+  { id: 'Pos_01', input: 'mama', expected: 'මම' },
+  { id: 'Pos_02', input: 'gedhara', expected: 'ගෙදර' },
+  { id: 'Neg_01', input: 'mama gedra yanawa', expected: 'මම ගෙදර යණවා' }, 
+  { id: "Pos_UI_0001", name: "Greeting phrase", input: "oyaata kohomadha?", expected: "ඔයාට කොහොමද?" }
+  // etc...
+];
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+for (const data of testData) {
+  test(`Test ${data.id}: Convert "${data.input}"`, async ({ page }) => {
+    await page.goto('https://www.swifttranslator.com/');
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+    const inputArea = page.getByPlaceholder('Input Your Singlish Text Here.');
+    const outputBox = page.locator('.card:has-text("Sinhala") .bg-slate-50');
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+    await inputArea.fill(data.input);
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-});
+    // Dynamic assertion based on the data
+    await expect(outputBox).toContainText(data.expected);
+
+     if (data.id === 'Pos_UI_0001') {
+      await inputArea.fill(data.input);
+
+      const clearBtn = page.getByRole('button', { name: /clear/i }).first();
+      await clearBtn.click();
+
+      await expect(inputArea).toHaveValue('');
+    }
+  });
+}
