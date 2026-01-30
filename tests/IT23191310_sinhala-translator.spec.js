@@ -3,12 +3,11 @@ import { test, expect } from '@playwright/test';
 // Define your test cases here
 const testData = [
   // positive test cases
-  { id: "", input: "", expected: "" },
 
   { id: "Pos_Fun_001", input: "machan uba adha lecture ekata giyaadha? monavadha adha kare ban?", expected: "මචන් උබ අද lecture එකට ගියාද? මොනවද අද කරෙ බන්?" },
   { id: "Pos_Fun_002", input: "aado ubata mokadha ban unee? ", expected: "ආඩො උබට මොකද බන් උනේ? " },
   { id: "Pos_Fun_003", input: "mata oyaava godaak mathakvenavaa anee!!", expected: "මට ඔයාව ගොඩාක් මතක්වෙනවා අනේ!!" },
-  { id: "Pos_Fun_004", input: "machan e link eka vaeda karanne naene, mokak hari avulak thiyaNavaavage one drive ekata gihilla ayeth parak check karalaa balanna. dhaval 12 ta kalin dhaanna onee eka.", expected: "මචන් එ link එක වැඩ කරන්නේ නැනෙ, මොකක් හරි අවුලක් තියණවාවගෙ one drive එකට ගිහිල්ල අයෙත් පරක් check කරලා බලන්න. දවල් 12 ට කලින් දාන්න ඔනේ එක." },
+  { id: "Pos_Fun_004", input: "machan e link eka vaeda karanne naene, mokak hari avulak thiyaNavaavage one drive ekata gihillaa ayeth parak check karalaa balanna. dhaval 12 ta kalin dhaanna onee eka.", expected: "මචන් එ link එක වැඩ කරන්නේ නැනෙ, මොකක් හරි අවුලක් තියණවාවගෙ one drive එකට ගිහිල්ලා අයෙත් පරක් check කරලා බලන්න. දවල් 12 ට කලින් දාන්න ඔනේ එක." },
   { id: "Pos_Fun_005", input: "machan oyaata mathakadha api giya paara karapu project eka? eeke thibba errors okkoma fix karanna apita loku velavak giyaa. eth apita dhila thiyena aluth assignment eka ita vadaa amaaru veiyi kiyala mata hithanava ban. haebayi ita kalin mama lap ekee RAM eka update karanna ona, mokadha dhaen eeka godak slow velaa thiyenne. oyaa dhanna computer shop ekak thiyanavaa nedha, mata puluvan nam kaathaa karala aduvata aran dhipanko. loku udhavuvak me velavee haetiyata. ", expected: "මචන් ඔයාට මතකද අපි ගිය පාර කරපු project එක? ඒකෙ තිබ්බ errors ඔක්කොම fix කරන්න අපිට ලොකු වෙලවක් ගියා. එත් අපිට දිල තියෙන අලුත් assignment එක ඉට වඩා අමාරු වේයි කියල මට හිතනව බන්. හැබයි ඉට කලින් මම lap එකේ RAM එක update කරන්න ඔන, මොකද දැන් ඒක ගොඩක් slow වෙලා තියෙන්නෙ. ඔයා දන්න computer shop එකක් තියනවා නේද, මට පුලුවන් නම් කාතා කරල අඩුවට අරන් දිපන්කො. ලොකු උදවුවක් මෙ වෙලවේ හැටියට. " },
   { id: "Pos_Fun_006", input: "thamuseta mama ekaparak kivvaa nedha bae kiyalaa", expected: "තමුසෙට මම එකපරක් කිව්වා නේද බැ කියලා" },
   { id: "Pos_Fun_007", input: "putha oyaa gedhara edhdhi ATM eken Rs.5000 aran enavadha?", expected: "පුත ඔයා ගෙදර එද්දි ATM එකෙන් Rs.5000 අරන් එනවද?" },
@@ -31,20 +30,22 @@ const testData = [
   { id: "Pos_Fun_024", input: "07574785426 me number ekta massage ekak dhaanna", expected: "07574785426 මෙ number එක්ට massage එකක් දාන්න" },
   
   //Negative test cases
+
   { id: "Neg_Fun_001",  input: "hetaubaenavane", expected: "හෙටුඋබඒනවනේ " },
-  { id: "Neg_Fun_002",  input: "", expected: "" },
-  { id: "Neg_Fun_003",  input: "", expected: "" },
-  { id: "Neg_Fun_004",  input: "", expected: "" },
-  { id: "Neg_Fun_005",  input: "", expected: "" },
-  { id: "Neg_Fun_006",  input: "", expected: "" },
-  { id: "Neg_Fun_007",  input: "", expected: "" },
-  { id: "Neg_Fun_008",  input: "", expected: "" },
-  { id: "Neg_Fun_009",  input: "", expected: "" },
-  { id: "Neg_Fun_010",  input: "", expected: "" },
+  { id: "Neg_Fun_002",  input: "oyata enn puluwanda", expected: "ඔයාට එන්න පුලුවන්ද?" },
+  { id: "Neg_Fun_003",  input: "mama oyata enn kiyala kiyanne me wade karaganna one hinda", expected: "මම ඔයාට එන්න කියලා කියන්නේ මේ වැඩේ කරගන්න ඕන හින්දා" },
+  { id: "Neg_Fun_004",  input: "spotify ek wadadha", expected: "spotify එක වැඩද? " },
+  { id: "Neg_Fun_005",  input: "oyamawadannnawada", expected: "ඔයමාවදන්නවද " },
+  { id: "Neg_Fun_006",  input: "mama gedarayanawaa", expected: "මම ගෙදර යනවා" },
+  { id: "Neg_Fun_007",  input: "karunakarala methanin athsan karanna", expected: "කරුණාකරලා මෙතනින් අත්සන් කරන්න" },
+  { id: "Neg_Fun_008",  input: "ayubowan!!", expected: "ආයුබෝවන්!!" },
+  { id: "Neg_Fun_009",  input: "ammo!!", expected: "අම්මෝ!!" },
+  { id: "Neg_Fun_010",  input: "karunika niwedanayai heta dhinasita 12 sreniye siyaluma panthi amathara paya 2ka kalayak pawathwana bawa dhannwasithimi miata widuhalpathi", expected: "කාරුණික නිවේදනයයි හෙට දින සිට 12 ශ්‍රේණියේ සියළුම පන්තියේ අමතර පය දෙකක කාලයක් පවත්වන බව දන්වා සිටිමි මීට විදුහල්පති" },
   
   //UI test cases
+  
   { id: "Pos_UI_0001",  input: "oyaata kohomadha?", expected: "ඔයාට කොහොමද?" }
-  // etc...
+  
 ];
 
 for (const data of testData) {
@@ -56,7 +57,6 @@ for (const data of testData) {
 
     await inputArea.fill(data.input);
 
-    // Dynamic assertion based on the data
     await expect(outputBox).toContainText(data.expected);
 
      if (data.id === 'Pos_UI_0001') {
