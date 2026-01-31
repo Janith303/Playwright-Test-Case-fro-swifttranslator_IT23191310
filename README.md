@@ -49,7 +49,7 @@ The purpose of this assignment is to:
 ---
 
 ## 📂 Project Folder Structure
-playwright-Test_Case-for-swifttranslator-IT23191310/ \n
+playwright-Test_Case-for-swifttranslator-IT23191310/ 
 │
 ├── tests cases/
 | ├── IT23191310_Test_cases.xlsx #test cases result file
