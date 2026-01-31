@@ -37,7 +37,7 @@ const testData = [
   { id: "Neg_Fun_004",  input: "spotify ek wadadha", expected: "spotify එක වැඩද? " },
   { id: "Neg_Fun_005",  input: "oyamawadannnawada", expected: "ඔයමාවදන්නවද " },
   { id: "Neg_Fun_006",  input: "mama gedarayanawaa", expected: "මම ගෙදර යනවා" },
-  { id: "Neg_Fun_007",  input: "karunakarala methanin athsan karanna", expected: "කරුණාකරලා මෙතනින් අත්සන් කරන්න" },
+  { id: "Neg_Fun_007",  input: "karunakarala methanin athsan karanwada?", expected: "කරුණාකරලා මෙතනින් අත්සන් කරනවාද?" },
   { id: "Neg_Fun_008",  input: "ayubowan!!", expected: "ආයුබෝවන්!!" },
   { id: "Neg_Fun_009",  input: "ammo!!", expected: "අම්මෝ!!" },
   { id: "Neg_Fun_010",  input: "karunika niwedanayai heta dhinasita 12 sreniye siyaluma panthi amathara paya 2ka kalayak pawathwana bawa dhannwasithimi miata widuhalpathi", expected: "කාරුණික නිවේදනයයි හෙට දින සිට 12 ශ්‍රේණියේ සියළුම පන්තියේ අමතර පය දෙකක කාලයක් පවත්වන බව දන්වා සිටිමි මීට විදුහල්පති" },
