@@ -48,19 +48,23 @@ The purpose of this assignment is to:
 
 ---
 
-## 📂 Project Folder Structure
-playwright-Test_Case-for-swifttranslator-IT23191310/ 
+## 📁 Project Folder Structure
+
+```text
+playwright-Test-Case-for-swifttranslator-IT23191310/
 │
-├── tests cases/
-| ├── IT23191310_Test_cases.xlsx #test cases result file
+├── test cases/
+│   └── IT23191310_Test_cases.xlsx   # Test cases result file
+│
 ├── tests/
-│ ├── positive.spec.js # IT23191310_sinhala-translator test cases
+│   └── positive.spec.js             # Sinhala translator test cases
 │
-├── playwright.config.js # Playwright configuration file
-├── package.json # Project dependencies and scripts
-├── package-lock.json # Dependency lock file
-├── README.md # Project documentation
-└── gitignore # Public GitHub repository link
+├── playwright.config.js             # Playwright configuration file
+├── package.json                     # Project dependencies and scripts
+├── package-lock.json                # Dependency lock file
+├── README.md                        # Project documentation
+└── .gitignore
+```
 
 ## ⚙️ Technologies Used
 
@@ -87,6 +91,34 @@ https://git-scm.com/
 1. Clone the public GitHub repository:
  ```bash
    git clone https://github.com/Janith303/Playwright-Test-Case-fro-swifttranslator_IT23191310.git
+```
+2.Navigate into the project folder:
+ ```bash
+cd playwright-Test_Case-for-swifttranslator-IT23191310
+```
+3.Install dependencies:
+```bash
+npm install
+```
+4.Install Playwright browsers:
+```bash
+npx playwright install
+```
+
+## ▶️ How to Execute Tests
+
+1.Run all Playwright tests:
+```bash
+npx playwright test
+```
+2.Run tests with UI test:
+```bash
+npx playwright test --ui
+```
+3.View test report:
+```bash
+npx playwright show-report
+```
 
 
 
